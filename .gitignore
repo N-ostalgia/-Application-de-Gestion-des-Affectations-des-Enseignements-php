@@ -1,0 +1,5 @@
+vendor/
+uploads/
+config/database.php
+*.log
+.env
