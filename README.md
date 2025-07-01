@@ -1,73 +1,141 @@
-# Application de Gestion des Affectations des Enseignements
 
-## Contexte
-Ce projet est une application web développée dans le cadre du module « Web 1 : Technologies du Web et PHP5 » (A.U. 2024/2025, Filière GI1, Prof : E. W. DADI). Elle vise à optimiser et automatiser l'affectation des unités d'enseignement (UE) aux enseignants au sein des départements académiques, tout en assurant une répartition équilibrée et transparente des charges horaires.
+# 🎓 Application de Gestion des Affectations des Enseignements
 
-## Objectifs
-- Centraliser la gestion des unités d'enseignement et des enseignants par département.
-- Simplifier l'expression des souhaits des enseignants pour l'année universitaire suivante.
-- Assurer une répartition équilibrée des charges horaires.
-- Permettre aux responsables de gérer et valider l'affectation des enseignements.
-- Générer des rapports détaillés pour le suivi et l'analyse.
-- Assurer la traçabilité des décisions et l'historique des affectations.
+![PHP Version](https://img.shields.io/badge/PHP-%3E%3D7.4-blue)
+![License](https://img.shields.io/badge/License-Academic--Use-lightgrey)
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
 
-## Fonctionnalités principales
-- Authentification sécurisée multi-rôles (admin, chef de département, coordonnateur, enseignant, vacataire)
-- Gestion centralisée des UE, enseignants, filières et départements
-- Expression des vœux d'enseignement par les professeurs
-- Affectation et validation des enseignements par les responsables
-- Calcul et suivi automatique des charges horaires
-- Import/export de données (Excel)
-- Génération de rapports et historique des affectations
-- Gestion des notes (upload, consultation)
+> Projet Web réalisé dans le cadre du module **« Web 1 : Technologies du Web et PHP5 »**  
+> _Année Universitaire 2024/2025 — Filière GI1 — 
 
-## Rôles et permissions
-- **Administrateur** : Gestion des comptes, création des professeurs, affectation des responsabilités
-- **Chef de département** : Gestion des modules et professeurs du département, affectation et validation des UE, reporting, gestion des UE vacantes
-- **Coordonnateur de filière** : Gestion des modules de la filière, affectation des vacataires, gestion des emplois du temps, import/export
-- **Enseignant** : Sélection des UE, suivi de la charge horaire, upload des notes, consultation de l'historique
-- **Vacataire** : Consultation des UE affectées, gestion des notes
+---
 
-## Installation et configuration
-1. **Prérequis**
-   - PHP >= 7.4
-   - Serveur web (Apache, Nginx, etc.)
-   - MySQL/MariaDB
-   - [Composer](https://getcomposer.org/) pour la gestion des dépendances
+## 🧭 Sommaire
 
-2. **Cloner le projet**
-   ```bash
-   git clone <repo-url>
-   cd <nom-du-dossier>
-   ```
+- [Contexte](#-contexte)
+- [Objectifs](#-objectifs)
+- [Fonctionnalités principales](#-fonctionnalités-principales)
+- [Rôles et permissions](#-rôles-et-permissions)
+- [Installation et configuration](#-installation-et-configuration)
+- [Utilisation](#-utilisation)
+- [Dépendances](#-dépendances)
+- [Auteurs](#-auteurs)
+- [Licence](#-licence)
 
-3. **Installer les dépendances PHP**
-   ```bash
-   composer install
-   ```
+---
 
-4. **Configurer la base de données**
-   - Créez une base de données MySQL/MariaDB
-   - Importez le fichier `database.sql`
-   - Modifiez les paramètres de connexion dans `config/database.php` si nécessaire
+## 📌 Contexte
 
-5. **Configurer les droits d'écriture**
-   - Assurez-vous que le dossier `uploads/` est accessible en écriture par le serveur web
+Cette application web a été conçue pour **optimiser** et **automatiser** le processus d’affectation des unités d’enseignement (UE) aux enseignants dans les départements académiques, tout en garantissant une **répartition équilibrée** et **transparente** des charges horaires.
 
-## Utilisation
-- Accédez à la page de connexion (`login.php`)
-- Connectez-vous avec un compte correspondant à votre rôle (admin, chef de département, etc.)
-- Naviguez selon les permissions de votre rôle pour gérer les affectations, modules, notes, etc.
+---
 
-## Dépendances
-- [PHPMailer](https://github.com/PHPMailer/PHPMailer) (pour l'envoi d'e-mails)
-- Bootstrap, FontAwesome (CDN, pour le style)
+## 🎯 Objectifs
 
-## Auteurs
-Aya BOUIBAUAN
-Safae BIFKIOUN
-Rachida Amourak
+- 🗂️ Centraliser la gestion des UE, enseignants et départements
+- 💬 Simplifier l’expression des souhaits des enseignants
+- ⚖️ Équilibrer les charges horaires automatiquement
+- 🧑‍💼 Permettre la gestion/validation des affectations par les responsables
+- 📄 Générer des rapports détaillés pour le suivi
+- 🕓 Assurer la traçabilité et l’historique des affectations
 
+---
 
-## Licence
-Ce projet est à usage académique dans le cadre du module Web1. 
+## ⚙️ Fonctionnalités principales
+
+- 🔐 Authentification multi-rôles sécurisée (Admin, Chef de Département, Coordonnateur, Enseignant, Vacataire)
+- 🧑‍🏫 Gestion centralisée des enseignants, modules, filières, départements
+- 🎯 Saisie des vœux d’enseignement
+- ✅ Validation des affectations
+- 🧮 Suivi automatique des charges horaires
+- 📤📥 Import/Export de données (Excel)
+- 🧾 Génération de rapports
+- 📝 Gestion et consultation des notes
+
+---
+
+## 👥 Rôles et permissions
+
+| Rôle                 | Actions principales |
+|----------------------|---------------------|
+| 🛠️ **Administrateur**        | Création de comptes, gestion des rôles |
+| 🧑‍🏫 **Chef de département** | Affectation/validation des UE, gestion modules et professeurs, reporting |
+| 📚 **Coordonnateur**        | Gestion des modules de filière, vacataires, emplois du temps |
+| 👨‍🎓 **Enseignant**           | Choix des UE, suivi de charge horaire, gestion des notes |
+| 🧑‍💻 **Vacataire**            | Consultation des affectations et gestion des notes |
+
+---
+
+## 🛠️ Installation et configuration
+
+### 1. Prérequis
+
+- PHP ≥ 7.4  
+- Serveur web (Apache ou Nginx)  
+- MySQL ou MariaDB  
+- [Composer](https://getcomposer.org/) installé
+
+### 2. Cloner le projet
+
+```bash
+git clone https://github.com/N-ostalgia/-Application-de-Gestion-des-Affectations-des-Enseignements-php.git
+cd Application-de-Gestion-des-Affectations-des-Enseignements-php
+```
+
+### 3. Installer les dépendances PHP
+
+```bash
+composer install
+```
+
+### 4. Configurer la base de données
+
+- Créez une base de données MySQL/MariaDB
+- Importez le fichier `database.sql`
+- Mettez à jour les identifiants dans `config/database.php` :
+
+```php
+define('DB_HOST', 'localhost');
+define('DB_USER', 'votre_utilisateur');
+define('DB_PASS', 'votre_mot_de_passe');
+define('DB_NAME', 'nom_de_la_base');
+```
+
+### 5. Configurer les droits d'écriture
+
+Assurez-vous que les dossiers suivants sont accessibles en écriture :
+
+```bash
+chmod -R 755 uploads/
+```
+
+---
+
+## 🚀 Utilisation
+
+1. Ouvrez votre navigateur et accédez à `http://localhost/login.php`
+2. Connectez-vous avec un compte correspondant à votre rôle (admin, enseignant, etc.)
+3. Naviguez dans l’interface pour gérer les UE, affectations, emplois du temps ou notes selon votre rôle.
+
+---
+
+## 📦 Dépendances
+
+- [PHPMailer](https://github.com/PHPMailer/PHPMailer) — pour l’envoi d’e-mails
+- [Bootstrap](https://getbootstrap.com/) — framework CSS responsive
+- [FontAwesome](https://fontawesome.com/) — bibliothèque d’icônes
+- [Composer](https://getcomposer.org/) — gestionnaire de dépendances PHP
+
+---
+
+## 👩‍💻 Auteurs
+
+- Aya **BOUIBAUAN**  
+- Safae **BIFKIOUN**  
+- Rachida **AMOURAK**
+
+---
+
+## 📝 Licence
+
+Ce projet est destiné uniquement à un usage **académique**, réalisé dans le cadre du module **Web 1 : Technologies du Web et PHP5** — Filière GI1, 2024/2025.
